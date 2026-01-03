@@ -11,8 +11,8 @@ add_library(WrongMath SHARED
 
 # include directories
 target_include_directories(WrongMath PUBLIC 
-    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
-    $<INSTALL_INTERFACE:include>
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/wrong_math>
+    $<INSTALL_INTERFACE:include/wrong_math>
 )
 
 # set output library name
