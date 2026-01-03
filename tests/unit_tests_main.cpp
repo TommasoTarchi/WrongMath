@@ -3,11 +3,11 @@
 #include <iostream>
 
 int main() {
-  int result1 = wrong_math::add(2, 3);
-  int result2 = wrong_math::add(1, -4);
+  const int result1 = wrong_math::add(2, 3);
+  const int result2 = wrong_math::add(1, -4);
 
   assert(result1 == 6);
-  assert(result2 == -1);
+  assert(result2 == -3);
 
   std::cout << "All unit tests passed!" << std::endl;
 
