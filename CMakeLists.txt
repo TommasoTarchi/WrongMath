@@ -8,6 +8,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 # define shared library
 add_library(WrongMath SHARED 
     src/wrong_sum.cpp
+    src/wrong_diff.cpp
 )
 
 # include directories
