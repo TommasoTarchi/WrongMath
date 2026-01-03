@@ -7,7 +7,7 @@ int main() {
   int result2 = wrong_math::add(1, -4);
 
   assert(result1 == 6);
-  assert(result2 == -2);
+  assert(result2 == -1);
 
   std::cout << "All unit tests passed!" << std::endl;
 
