@@ -58,7 +58,7 @@ To use the WrongMath library in your C++ project, include the header and access 
 functions within the `wrong_math` namespace. Here's a simple example:
 ```cpp
 #include <iostream>
-#include "wrong_math/wrong_math.h"
+#include "wrong_math/wrong_math.hpp"
 
 int main() {
     int a = 5;
