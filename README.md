@@ -5,30 +5,78 @@ software development methods, like CI/CD, testing, documentation, and so on.
 
 For easier testing, all operations implemented give the correct result plus one.
 
+## Prerequisites
 
-## Compile the library
+Before building, ensure you have the following installed:
 
-### Prerequisites
+* **Linux**: Ubuntu/Debian or similar.
+* **C++ Compiler**: GCC or Clang (supporting C++17).
+* **CMake**: Version 3.15 or higher.
+* **Doxygen**: For generating documentation (optional).
 
-You need to have CMake >=3.15 and a C++ compiler installed on your system. At least C++17 is required.
+## Building and testing
 
-### Build and test
+To build the library and run tests, follow these steps:
 
-Create a directory named `build` in the root directory of the project, then run the following commands:
+1. Clone the repository:
+   ```bash
+   git clone git@github.com:TommasoTarchi/WrongMath.git
+   cd WrongMath
+   ```
+
+2. Create a build directory and compile the code:
+   ```bash
+   cmake -S . -B build
+   cmake --build build
+   ```
+
+3. (Optional) Run the tests:
+   ```bash
+   ctest --test-dir build --output-on-failure
+   ```
+
+4. (Optional) Generate documentation:
+   ```bash
+   cmake --build build --target docs
+   ```
+
+The compiled library `libwrong_math.so` will be located in the `build` directory. If
+generated, the documentation will be in `build/docs/html`.
+
+## Installation
+
+If you want, you can also install the library system-wide using:
 ```bash
-cmake -S . -B build
-cmake --build build
+sudo cmake --install build
 ```
 
-To run the tests, execute:
-```bash
-ctest --test-dir build --output-on-failure
+## Usage
+
+To use the WrongMath library in your C++ project, include the header and access the
+functions within the `wrong_math` namespace. Here's a simple example:
+```cpp
+#include <iostream>
+#include "wrong_math/wrong_math.h"
+
+int main() {
+    int a = 5;
+    int b = 3;
+    std::cout << "Wrong addition of " << a << " and " << b << " is: "
+              << wrong_math::add(a, b) << std::endl; // Outputs 9
+    return 0;
+}
 ```
 
-### Generate documentation
-
-If you have Doxygen installed, you can generate the documentation by running in the root directory of
-the project:
+Compile your program linking against the WrongMath library as follows, adjusting the paths
+as necessary:
 ```bash
-cmake --build build --target docs
+g++ -c my_program.cpp -I/path/to/WrongMath/include
+g++ my_program.o -L/path/to/WrongMath/build -lwrong_math -o my_program
+```
+
+Before running your program, ensure that the dynamic linker can find the `libwrong_math.so`
+library. You can set the `LD_LIBRARY_PATH` environment variable to include the directory
+where the library is located:
+```bash
+export LD_LIBRARY_PATH=/path/to/WrongMath/build:$LD_LIBRARY_PATH
 ```
