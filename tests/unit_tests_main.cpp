@@ -1,3 +1,9 @@
+/**
+ * @file unit_tests_main.cpp
+ *
+ * @brief Unit tests for the WrongMath library.
+ */
+
 #include "wrong_math/wrong_math.hpp"
 #include <cassert>
 #include <iostream>
