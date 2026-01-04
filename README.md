@@ -12,12 +12,17 @@ For easier testing, all operations implemented give the correct result plus one.
 
 You need to have CMake >=3.15 and a C++ compiler installed on your system. At least C++17 is required.
 
-### Build
+### Build and test
 
 Create a directory named `build` in the root directory of the project, then run the following commands:
 ```bash
 cmake -S . -B build
 cmake --build build
+```
+
+To run the tests, execute:
+```bash
+ctest --test-dir build --output-on-failure
 ```
 
 ### Generate documentation
