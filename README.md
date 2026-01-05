@@ -28,6 +28,7 @@ To build the library and run tests, follow these steps:
 
 2. Create a build directory and compile the code:
    ```bash
+   mkdir build
    cmake -S . -B build
    cmake --build build
    ```
