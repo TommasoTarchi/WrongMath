@@ -33,8 +33,8 @@ To build the library and run tests, follow these steps:
    cmake --build build
    ```
    Since testing is enabled by default, the tests will also be built. If you want to
-   avoid Catch2 overhead, you can disable tests by adding `-DUNIT_TESTS=OFF` to the
-   `cmake -S . -B build` command.
+   avoid Catch2 overhead in the building phase, you can disable tests by adding
+   `-DUNIT_TESTS=OFF` to the `cmake -S . -B build` command.
 
 3. (Optional) Run the tests:
    ```bash

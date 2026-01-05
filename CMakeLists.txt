@@ -37,7 +37,7 @@ if(UNIT_TESTS)
     FetchContent_Declare(
       Catch2
       GIT_REPOSITORY https://github.com/catchorg/Catch2.git
-      GIT_TAG        v3.4.0 # Pin a specific version for stability
+      GIT_TAG        v3.4.0 # pin a specific version for stability
     )
 
     FetchContent_MakeAvailable(Catch2)
