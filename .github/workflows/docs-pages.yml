@@ -1,0 +1,57 @@
+name: Deploy Doxygen Documentation to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build-docs:
+    name: Build Doxygen Documentation
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            build-essential \
+            cmake \
+            doxygen \
+            graphviz
+
+      - name: Configure CMake
+        run: cmake -S . -B build
+
+      - name: Generate Doxygen documentation
+        run: cmake --build build --target docs
+
+      - name: Disable Jekyll processing
+        run: touch build/docs/html/.nojekyll
+
+      - name: Upload pages artifact
+        id: upload
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: build/docs/html
+
+  deploy-docs:
+    name: Deploy Documentation to GitHub Pages
+    needs: build-docs
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
