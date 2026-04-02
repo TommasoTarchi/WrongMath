@@ -9,7 +9,8 @@ on:
 jobs:
   build-docs:
     name: Build Doxygen Documentation
-    runs-on: ubuntu-latest
+
+    runs-on: ubuntu-24.04
 
     steps:
       - name: Checkout repository
@@ -23,6 +24,9 @@ jobs:
             cmake \
             doxygen \
             graphviz
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
 
       - name: Configure CMake
         run: cmake -S . -B build
@@ -41,8 +45,11 @@ jobs:
 
   deploy-docs:
     name: Deploy Documentation to GitHub Pages
+
     needs: build-docs
-    runs-on: ubuntu-latest
+
+    runs-on: ubuntu-24.04
+
     permissions:
       pages: write
       id-token: write
