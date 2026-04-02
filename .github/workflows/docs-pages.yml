@@ -3,7 +3,7 @@ name: Deploy Doxygen Documentation to GitHub Pages
 on:
   push:
     branches:
-      - experiment-opencode
+      - main
   workflow_dispatch:
 
 jobs:
