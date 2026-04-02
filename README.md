@@ -1,7 +1,7 @@
 # WrongMath
 
 [![WrongMath CI](https://github.com/TommasoTarchi/WrongMath/actions/workflows/ci.yml/badge.svg)](https://github.com/TommasoTarchi/WrongMath/actions/workflows/ci.yml)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License: GPL-3.0](https://img.shields.io/badge/License-GPL--3.0-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.en.html)
 
 This is a stupid, useless, wrong math library written in C++. I use it to experiment with
 software development methods, like CI/CD, testing, documentation, and so on.
