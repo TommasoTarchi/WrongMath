@@ -55,7 +55,7 @@ This project uses `.clang-format` for consistent code formatting. Before
 committing, run:
 
 ```bash
-clang-format -i src/*.cpp include/**/*.hpp
+clang-format -i src/*.cpp include/wrong_math/*.hpp
 ```
 
 Or use the pre-commit hook which runs automatically before each commit.
