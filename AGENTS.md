@@ -122,10 +122,8 @@ cmake --build build --target docs
 - Tag all tests with `[wrong_math]` for filtering
 - Each test group (`TEST_CASE`) should cover a logical function
 
-### Commit Messages
-- First line under 72 characters
-- Clear, descriptive summary
-- Use present tense: "Add subtraction function" not "Added subtraction"
+### Git
+Do **not** use git.
 
 ### Adding New Functions
 1. Add declaration to `include/wrong_math/wrong_math.hpp`
